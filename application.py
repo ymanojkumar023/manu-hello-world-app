@@ -22,7 +22,7 @@ from ssd_encoder_decoder.ssd_output_decoder import decode_detections, decode_det
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
 #from werkzeug.utils import secure_filename
-from gevent.pywsgi import WSGIServer
+#from gevent.pywsgi import WSGIServer
 
 
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ print('Model loaded. Start serving...')
 # Check https://keras.io/applications/
 #from keras.applications.resnet50 import ResNet50
 #model = ResNet50(weights='imagenet')
-print('Model loaded. Check http://127.0.0.1:5001/')
+print('Model loaded. Check http://127.0.0.1:5000/')
 
 '''
 def model_predict(img_path, model):
@@ -142,9 +142,9 @@ def upload():
 '''
 
 if __name__ == '__main__':
-    # app.run(port=5001, debug=True)
-
+#     app.run(port=5000, debug=True)
+     app.run(host='0.0.0.0')
     # Serve the app with gevent
-    http_server = WSGIServer(('0.0.0.0', 5001), app)
-    http_server.serve_forever()
+#    http_server = WSGIServer(('0.0.0.0', 5000), app)
+#    http_server.serve_forever()
     
