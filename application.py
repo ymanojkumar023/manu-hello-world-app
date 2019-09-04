@@ -21,7 +21,7 @@ from ssd_encoder_decoder.ssd_output_decoder import decode_detections, decode_det
 '''
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
-from werkzeug.utils import secure_filename
+#from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 
@@ -102,20 +102,20 @@ def index():
 def upload():
     if request.method == 'POST':
         # Get the file from post request
-        f = request.files['image']
+#        f = request.files['image']
 
-        # Save the file to ./uploads
-        basepath = os.path.dirname(__file__)
-        file_path = os.path.join(
-            basepath, 'uploads', secure_filename(f.filename))
-        f.save(file_path)
+#        # Save the file to ./uploads
+#        basepath = os.path.dirname(__file__)
+#        file_path = os.path.join(
+#            basepath, 'uploads', secure_filename(f.filename))
+#        f.save(file_path)
 
         # Make prediction
 #        preds = model_predict(file_path, model)
         preds = "Application Testing"
         
         # Delete the uploaded image from storage
-        os.remove(file_path)
+#        os.remove(file_path)
         
         result = preds
         return result
@@ -147,3 +147,4 @@ if __name__ == '__main__':
     # Serve the app with gevent
     http_server = WSGIServer(('0.0.0.0', 5001), app)
     http_server.serve_forever()
+    
