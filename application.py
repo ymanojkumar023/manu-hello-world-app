@@ -10,7 +10,7 @@ import time
 from math import ceil
 
 # Keras
-
+'''
 from keras_loss_function.keras_ssd_loss import SSDLoss
 from keras_layers.keras_layer_AnchorBoxes import AnchorBoxes
 from keras_layers.keras_layer_L2Normalization import L2Normalization
@@ -18,7 +18,7 @@ from keras.models import load_model
 from imageio import imread
 from keras.preprocessing import image
 from ssd_encoder_decoder.ssd_output_decoder import decode_detections, decode_detections_fast
-
+'''
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
@@ -77,7 +77,7 @@ print('Model loaded. Start serving...')
 #model = ResNet50(weights='imagenet')
 print('Model loaded. Check http://127.0.0.1:5001/')
 
-
+'''
 def model_predict(img_path, model):
 #    i = 1
     orig_images = [] # Store the images here.
@@ -91,7 +91,7 @@ def model_predict(img_path, model):
     preds = model.predict(input_images) #Prediction using trained model
     return preds
 
-
+'''
 @app.route('/', methods=['GET'])
 def index():
     # Main page
