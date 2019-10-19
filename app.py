@@ -20,6 +20,8 @@ from keras_loss_function.keras_ssd_loss import SSDLoss
 from keras_layers.keras_layer_AnchorBoxes import AnchorBoxes
 from keras_layers.keras_layer_L2Normalization import L2Normalization
 
+from ssd_encoder_decoder.ssd_output_decoder import decode_detections, decode_detections_fast
+from ssd_encoder_decoder.ssd_input_encoder import SSDInputEncoder
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
