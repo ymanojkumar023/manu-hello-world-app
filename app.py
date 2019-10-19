@@ -17,6 +17,9 @@ from matplotlib import pyplot as plt
 
 # Keras import from local function
 from keras_loss_function.keras_ssd_loss import SSDLoss
+from keras_layers.keras_layer_AnchorBoxes import AnchorBoxes
+from keras_layers.keras_layer_L2Normalization import L2Normalization
+
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
