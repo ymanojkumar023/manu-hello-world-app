@@ -15,6 +15,9 @@ from imageio import imread
 from keras.preprocessing import image
 from matplotlib import pyplot as plt
 
+# Keras import from local function
+from keras_loss_function.keras_ssd_loss import SSDLoss
+
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
