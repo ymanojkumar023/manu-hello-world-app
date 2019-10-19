@@ -76,7 +76,7 @@ $(document).ready(function () {
 		var div = document.getElementById('pred_img');
 		img.src = "static/preds/predicted_img.jpg?" + new Date().getTime();
 		img.onload = function() {
-			div.innerHTML = '<img width="400px" height="320px" src="'+img.src+'" align="right" />'; 
+			div.innerHTML = '<img width="480px" height="340px" src="'+img.src+'" align="right" />'; 
 			};
 		   
 		////img.parentNode.removeChild(img);
