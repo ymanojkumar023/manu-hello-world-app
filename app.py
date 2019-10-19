@@ -84,6 +84,34 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def index():
     # Main page
     return render_template('index.html')
+    
+@app.route('/predict', methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        # Get the file from post request
+        f = request.files['image']
+
+        # Save the file to ./uploads
+        basepath = os.path.dirname(__file__)
+        file_path = os.path.join(
+            basepath, 'uploads', secure_filename(f.filename))
+        f.save(file_path) 
+        
+        
+        result = str('No Pool detected in the image.')
+        # Call fucntion to save the predicted image with boundary boxes drawn
+        try: os.remove('static/preds/predicted_img.jpg')
+        except: None
+        save_prediction(file_path, None)
+        
+        # Delete the uploaded image from storage
+        os.remove(file_path)
+        
+        return result
+    return None
+
+
+
 '''
 @app.route("/")
 def hello():
